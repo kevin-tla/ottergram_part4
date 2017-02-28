@@ -45,6 +45,7 @@ function addThumbClickHandler(thumb) {
     });
 }
 
+//Function to get all tags with data-image-role="trigger" and the puts it into an array a.k.a the otter pics
 function getThumbnailsArray() {
     'use strict';
     var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
@@ -74,36 +75,59 @@ function addKeyPressHandler() {
     document.body.addEventListener('keyup', function(event) {
         event.preventDefault();
         console.log(event.keyCode);
+
+
+        var thumbArray = getThumbnailsArray();
         if (event.keyCode === ESC_KEY) {
             hideDetails();
         }
-
-        /*Need to get info from thumbnail*/
         else if (event.keyCode === OTTER1) {
-
-            setDetails('img/otter1.jpg', 'Stayin\' Alive');
-            /*make a function that displays the image*/
+            setDetailsFromThumb(thumbArray[0]);
+            showDetails();
         } else if (event.keyCode === OTTER2) {
 
-            setDetails('img/otter2.jpg', 'How Deep Is Your Love');
-            /*make a function that displays the image*/
+            setDetailsFromThumb(thumbArray[1]);
+            showDetails();
         } else if (event.keyCode === OTTER3) {
 
-            setDetails('img/otter3.jpg', 'You Should Be Dancing');
-            /*make a function that displays the image*/
+            setDetailsFromThumb(thumbArray[2]);
+            showDetails();
         } else if (event.keyCode === OTTER4) {
 
-            setDetails('img/otter4.jpg', 'Night Fever');
-            /*make a function that displays the image*/
+            setDetailsFromThumb(thumbArray[3]);
+            showDetails();
         } else if (event.keyCode === OTTER5) {
 
-            setDetails('img/otter5.jpg', 'To Love Somebody');
-            /*make a function that displays the image*/
+            setDetailsFromThumb(thumbArray[4]);
+            showDetails();
         }
 
 
     });
 }
+
+
+
+/*
+
+function addNumPressHandler() {
+    'use strict';
+    document.body.addEventListener('keyup', function(event) {
+        event.preventDefault();
+        //console.log(event.keyCode);
+        var thumbArray = getThumbnailsArray();
+        var keyCode = [49, 50, 51, 52, 53, 54, 55, 56, 57]; // numkey 1 to 9
+        //if (keyCode.includes(event.keyCode)) {
+        for (var i = 0; i < thumbArray.length; i++) {
+            var A = keyCode[i];
+            if (event.keyCode === A) {
+                setDetailsFromThumb(thumbArray[i]);
+                showDetails();
+            }
+        }
+    });
+}
+*/
 
 function initializeEvents() {
     'use strict';
