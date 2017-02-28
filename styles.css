@@ -62,8 +62,8 @@ a {
     /*how fast the image grows
     ease-in-out keyword makes initial transition slow but final transition fast
     ease-in makes transition slow for both in and out
-    */
-    transition: transform 1000ms ease-in;
+
+    transition: transform 1000ms ease-in;*/
 }
 
 
