@@ -62,8 +62,8 @@ a {
     /*how fast the image grows
     ease-in-out keyword makes initial transition slow but final transition fast
     ease-in makes transition slow for both in and out
-
-    transition: transform 1000ms ease-in;*/
+    */
+    transition: transform 1000ms ease-in;
 }
 
 
@@ -107,9 +107,14 @@ a {
 }
 
 .detail-image-frame {
+    text-align: center;
+    position: relative;
+    transition: transform 333ms cubic-bezier(1, .06, .28, 1);
+    /*
     position: relative;
     text-align: center;
-    transition: transform 333m cubic-bezier(.11, .54, .94, .42);
+    transition: transform 333m cubic-bezier(1, .06, .28, .1);
+    */
 }
 
 .is-tiny {
